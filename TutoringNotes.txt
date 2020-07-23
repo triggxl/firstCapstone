@@ -1,0 +1,59 @@
+Tutoring:
+
+7/22
+
+•start using DevTools, create temp variables to build requests for data 
+
+Resources:
+https://canvasjs.com/javascript-charts/
+https://www.benzinga.com/apis/?utm_source=SEM&utm_medium=SEM
+
+7/20
+•right click --> rename symbol change all instances of variable (in VS code)
+go to network tab to view all your requests made
+
+fetch(url).then()
+
+const promise = fetch(url)
+
+promise.then()
+
+const promise1 = fetch1()
+
+const promise2 = fetch2()
+
+Promise.all([promise1, promise2]).then((result1, result2) =>
+
+Promise.all([fetch(), fetch()
+
+Promise.all(arrayofPromises)
+
+const combinedPromise = Promise.all(arayofpromises)
+
+combinedPromise.then()
+-----------------------------------------------------------------------------------------
+Promise.all([
+
+fetch(url1).then(resposne => response.json()),
+
+fetch(url2).then(resposne => response.json())
+
+]).then((results1, results2) =>
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+
+•using debugger; in the console (under sources tab click on line you want to debug or stop at) vs. simply add 'debugger;' within your code
+-----------------------------------------------------------------------------------------
+References:
+
+•web sockets
+
+•react hooks and implementing context
+devs will usually create a component to hold their context or class component without hooks (old way)
+https://reactjs.org/docs/context.html
+
+slow low polling rate to prevent using up too much bandwidth
+
+Concepts:
+
+how to address/pitch your issue

@@ -1,0 +1,294 @@
+
+
+
+
+
+
+app to promote your ideas to vendors and corporations, gain attention in the market, generate a following 
+and crowd funding
+
+-----------------------------------------------------------------------------------------
+
+Spotify Web API and Genius API (Lyrics)
+
+High Level Definition:
+Help provide user context, annotations, and interpretations of lyrics from 
+the current artist by pairing Spotify's API with Genius Lyrics API
+
+https://developer.spotify.com/documentation/web-api/reference/object-model/
+
+-----------------------------------------------------------------------------------------
+•Context for words in news articles (on hover)
+https://www.linguarobot.io/
+-----------------------------------------------------------------------------------------
+Bookmark API:
+
+"Bracket"
+"BracKit"
+Develop a catalog extension that allows the user to custom create browsing sessions, with default/pinned tabs categorized by the user- ex: 
+
+Develop a catalog extension API that allows the user to log and access custom browsing sessions, based on categories set by the user: ex: Professional tab, tab for Travel Plans/Leisure, tab for education/studying
+making their workspace more efficient, and custom tailored to their priorities. 
+
+APIs:
+*https://developer.chrome.com/extensions/devguide (Create a version of the New Tab, Bookmark, or History page.)
+https://developer.chrome.com/extensions/api_index
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Work_with_the_Bookmarks_API
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions
+
+
+Custom Time Tracker App: 
+
+APIs:
+(Excel)
+Android
+IOs
+Chrome
+Firefox
+
+
+"Studious"
+Personal -- Professional -- Career
+
+workouts
+new hobbies
+school assignments
+appointments
+
+const url;
+const apiKey;
+
+const habits = () => {
+  
+}
+const task = () => {
+
+}
+const startDate = () => {
+
+}
+const EndDate = () => {
+
+}
+
+$(watchForm());
+
+-----------------------------------------------------------------------------------------
+(Node)
+Distracted Driving API/Maestro (Catalogs requests taken by user)
+-----------------------------------------------------------------------------------------
+Pitch:
+Mitigates distractions, allowing the user to only engage in driving related tasks
+and be more attentive of their surroundings; helps to exercise self-control and discipline to
+be more at ease during their commute and appreciative of other drivers; be more diligent; not so rushed/apprehensive;
+
+Overview:
+•API that forwards all notifications to DND (do not disturb mode), enabling hands-free calling only
+•Basic Functionality: feature will be enabled once engine is started, and vehicle is switched from park to drive; 
+•app will pair with ECU Chip (newer) or crack sensor (older) ref: https://www.quora.com/What-sensors-are-used-to-detect-when-a-car-is-running
+other terms to consider: image processing algorithms, car engine sensors, in-vehicle infotainment (IVI) system with smartphone integration
+(**perhaps a pair API to a hub/port/brick can be created to allow smartphone integration to enable app features in all vehicles**)
+-----------------------------------------------------------------------------------------
+•notifications will only become available once the engine is turned off OR
+car has been in park for >= 5 seconds
+"Any notifications during your trip will be available once your trip has ended;
+-----------------------------------------------------------------------------------------
+General Syntax:
+
+const url;
+const apiKey;
+
+
+const getData = () => {
+  //fetch
+  //then
+  //catch
+}
+
+const displayResults = () => {
+
+}
+
+const whileDriving = () => {
+  Would you like to enable a complimentary 'away message' during this trip?
+  ex: users will be notified when they try to reach you, that you are currently 'on the road again..'
+  (come up with witty phrases to augment utility value for the user)
+}
+
+--> if endOfTrip () {
+  Would you like to enable notifications?
+  please place the vehicle in park. you're notifications will display shortly..
+}
+
+const myCatalog = () => {
+  tasks, reminders, notifications, 'food for thought', ideas, revelations etc (keep in local storage until cataloged??)
+}
+
+const watchForm = () => {
+
+}
+
+$(watchForm());
+-----------------------------------------------------------------------------------------
+*API systems to communicate with: (newer, older)*
+1. connect/pairs with infotainment systems (IVI), ECU Chip (Start with current vehicle, Hyundai)
+2. Older:
+ •connect/pairs with Bluetooth Receiver ex: FM transmitter/**Dedicated Bluetooth Speaker Phone (clips to sunvisor)
+...
+
+3. IO_CAPABILITY_IO: Device has a display and can accept basic (yes/no) input. (Languages: Kotlin, Java)
+https://developer.android.com/things/sdk/apis/bluetooth#java
+(All in all I can create a browser based API that carries out these features, --> write it in different languages later)
+
+End Distracte Driving
+https://www.enddd.org/
+
+Work through Car Insurance Apps?
+https://developer.android.com/reference/android/service/notification/package-summary
+
+https://api.slack.com/methods/dnd.setSnooze
+
+EverDrive App API
+https://www.slashgear.com/do-not-disturb-while-driving-unsafe-car-distraction-survey-2018-18527827/
+
+I'm looking to build an API that enables DND mode while in transit, only allowing hands-free calling--forwarding all other notifications +/- custom away message during trip--simple UI/limited UX 'auto-pilot' --> improve safety & experience of driver
+https://www.everquote.com/everdrive/
+
+Work with:
+1. infotainment systems (IVI), ECU Chip
+2. Older:
+ •Bluetooth Receiver ex: FM transmitter/* Dedicated Bluetooth Speaker Phone(clips to sunvisor)
+3. Andriod Auto
+4. EverDrive
+5. Insurance Companies (Safe Auto, Progressive)
+6. IOs platform for Apple
+
+API doc references:
+
+Interact with Bluetooth devices on the Web
+https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
+An in-vehicle infotainment (IVI) system is a collection of hardware and software modules installed in a vehicle that 
+provides digital information systems and entertainment functionality
+Essential software building blocks to develop embedded and mobile navigation solutions
+https://developer.here.com/automotive/documentation
+
+What is SmartDeviceLink?
+https://d83tozu1c8tt6.cloudfront.net/media/resources/SmartDeviceLink_White_Paper.pdf
+https://www.digitaltrends.com/mobile/how-do-we-stop-texting-and-driving/
+-----------------------------------------------------------------------------------------
+Features/Functionalities:
+*DND mode enabling (Do Not Disturb)*
+export and list custom DND rules
+Suppressing visual distractions
+https://source.android.com/devices/tech/display/dnd
+-----------------------------------------------------------------------------------------
+Gist:
+•Having trouble finding the API docs to communicate with
+•I'm wanting to create an API that pairs with the Bluetooth component vehicle/phone/streaming assistant to enter DND mode while driving
+I just need to figure out how to work with EverDrive's API platform
+
+Dedicated Bluetooth Speaker Phone's API documentation, Google Assistant
+
+Goal is to suppress visual distractions, optimize coordination/travel time/user experience on the road;to greatly improve the safety and experience 
+
+DND mode enabling (Do Not Disturb)
+
+•Application Provided vs. Preloaded DND rules
+
+•export and list custom DND rules
+
+-The Android settings UI presents user options for suppressing visual distractions such as heads up notifications, 
+fullscreen intents, ambient display, and LED notification lights.
+https://developer.android.com/training/cars
+
+Bluetooth management systems API
+
+Android Automotive OS built in infotainment system/voice assistant
+
+•pairing with your phone’s built-in assistant (newer)
+•built-in FM transmitter (older)
+https://www.reviewgeek.com/12185/the-best-bluetooth-speaker-phones-for-your-old-car/
+
+-You can connect a smartphone to your car stereo using: Bluetooth. USB cable. 3.5 mm audio jack.
+https://www.google.com/search?q=what+connects+my+phone+to+my+car+speakers&rlz=1C5CHFA_enUS785US785&oq=what+connects+my+phone+to+my+car+speakers&aqs=chrome..69i57j0l4.33636j0j4&sourceid=chrome&ie=UTF-8
+
+preventing notifications like text messages and calls from sounding while the vehicle is in motion
+https://www.slashgear.com/do-not-disturb-while-driving-unsafe-car-distraction-survey-2018-18527827/
+-----------------------------------------------------------------------------------------
+•link to reward system for choosing to develop safer driving habits (ref: EverDrive, State Farm/Progressive Insurance)
+ex: 2x fuel perks for ex: the current Month
+
+•look at do not disturb mode API docs
+•look into API docs of other task management applications (ex: Evernote, Android Auto)
+
+•includes a feature that allows the user to save 'footnotes' throughout their trip (stored in 'Footnotes' file, local storage)
+(API functionality similar to Alexa or other iOT's)
+
+• "maestro" feature to help driver engage in safer/more effective driving habits +
+stay up to date with driving protocols
+-----------------------------------------------------------------------------------------
+Resources:
+
+What is meant by EMI and EMC?
+While electromagnetic interference (EMI) is a phenomenon - the radiation emitted and its effects - 
+electromagnetic compatibility (EMC) is an equipment characteristic or property - not to behave unacceptably in the EMI environment.
+
+ECU
+Every modern car now has an engine chip, which is part of the ECU (electronic control unit), 
+that monitors how much fuel and air goes into the engine as well as the exhaust gases that come out the other end. 
+The main job of the ECU and its chip is to balance power performance with economy and emissions.
+http://home.bt.com/lifestyle/motoring/motoring-features/should-you-re-chip-your-cars-engine-11363980902108#:~:text=Every%20modern%20car%20now%20has,performance%20with%20economy%20and%20emissions.
+
+Immobilizer Systems (use to prevent hot wiring or motor theft)
+"transponder sends a signals the corresponds with a set of unique codes to compare to ones stored in memory. If match is found --> okay to start message through the BCM to the ECM"
+
+Immobilizer Control Module -> Body Control Module -> Engine Control Module
+ICM -> BCM -> ECM
+https://www.youtube.com/watch?v=KPg1hTMyD80
+
+3 Ways to add Bluetooth to any car:
+Bluetooth Receiver (USB or 12V powered, battery operated) (ref: Dedicated Bluetooth Speaker Phone)
+option to pay off all at once, or break up into monthly charges/add to phone plan (mandate everyone having a Dedicated Bluetooth Speaker Phone by xx/xx/xxxx...)
+https://www.youtube.com/watch?v=hkZNfoDWcyU
+-----------------------------------------------------------------------------------------
+Key Terms/Phrases:
+
+Bluetooth dongles (adapter) connected to the vehicle’s onboard diagnostic (OBD-II) system
+see the potential for new infotainment solutions 
+running a proprietary real-time operating system (RTOS)
+voice recognition in-vehicle
+Assisted Driving Mode
+5g/cellular-v2x
+
+Ref: Lingo/Requirements section
+https://developer.qualcomm.com/blog/developer-opportunity-automotive-infotainment
+
+Bluetooth Wireless Monitoring, Managing and Control for
+Inter Vehicle in Vehicular Ad-Hoc Networks 
+https://pdfs.semanticscholar.org/2249/3c27e3112530fe76b4c0e77a4c0a27dba616.pdf
+
+Bluetooth hands-free streaming assistant
+https://www.amazon.com/Bluetooth-Speakerphone-Hands-Free-Streaming-Assistant/dp/B07KXRCCKY/ref=sr_1_7_sspa?dchild=1&keywords=Dedicated+Bluetooth+Speaker+Phone+%28clips+to+sunvisor%29&qid=1594406436&sr=8-7-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFSODhKWk8zS1FCOTMmZW5jcnlwdGVkSWQ9QTA3MjI1OTkyVVpLUllFNTNaMkRVJmVuY3J5cHRlZEFkSWQ9QTA5Njg0NjczQVhQR0hSSlRaNEE5JndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==
+ref: hands free bluetooth car kits
+-----------------------------------------------------------------------------------------
+Vive-
+App update (required) for download during installation of a new phone and or on software updates that cannot be deleted, that strictly limits use of phone after ignition is started in the vehicle (driver seat only)...
+((visual design/interactivity to teach user's how to use this alternative method)) Ignition sensor placed on engine that relays activity of engine to phone + motion sensors...+ only activated within radius of driver's seat...
+motion detector to safely stream during commute (Facebook portal concept) ...initial detect of user and friends (survey field "wave to be included in video" to include in focus during length of video...front and back camera (panoramic view if traveling...? )
+
+What problem does your idea address?
+The problem is, that we don't always have time to physically write something down when we're on the road. We don't really even have time to open an app to capture a thought either. With Memor-ago, it would be a hands-free device that is personalized to you.
+
+Memor-ago
+Life is full of moments that we least expect. Why not capture them?
+How does your idea solve this problem?
+The device would clip onto a visor or air vent, and as you think of something you need to jot down, "Memor-ago" will 
+do the rest. Set a greeting for your "Memor-ago" to turn on and your voice will be heard. 
+Instantly upload a famous saying to Facebook, or choose to save your thought under a new titled folder for later recollection. 
+This product would significantly increase productivity on the road, as well as make our roads safer.
+https://invent.quirky.com/invent/133978/problem-solution/contributions/267891
+-----------------------------------------------------------------------------------------
+Links:
+Bluetooth
+https://www.amazon.com/gp/product/B07KXRCCKY/ref=ox_sc_act_title_3?smid=A2UM0X40UXSI2V&psc=1
+https://www.amazon.com/gp/product/B07M9VCN22/ref=ox_sc_act_title_2?smid=A2YKPNU89U9ERX&psc=1
