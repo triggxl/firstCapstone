@@ -1,14 +1,9 @@
-const fetchAlpha = (stockTickerSymbol) => {
-  return fetch(`https://www.alphavantage.co/query?`+ 
-        `function=TIME_SERIES_INTRADAY&symbol=${stockTickerSymbol}&interval=15min&outputsize=full&apikey=JCHGSHKFMU62OPVQ`)
-  .then(response => response.json())
-  //performing fetch + converting response to json (grabbing the data only) 
-}
 
 const fetchStockTicker = () => {
-  let stockTickerPromise = fetch(`url`);
-  let parseDataPromise = stockTickerPromise.then(response => response.json())
-  return parseDataPromise;
+  // let stockTickerPromise = fetch(`url`);
+  // let parseDataPromise = stockTickerPromise.then(response => response.json())
+  // return parseDataPromise;
+  return new Promise(function(){});
 }
 
 const handleAllFetchCallsAndPromises = () => {
@@ -17,53 +12,56 @@ const handleAllFetchCallsAndPromises = () => {
   allFetches.then((result1, result2));
 }
 
-// const fetchIex = (result) => {
-//   fetch(`https://cloud.iexapis.com/v1/stock/aapl/batch?` + 
-//   `types=quote,news,chart&range=1m&last=15&token=pk_c34e191e78b54138b8559eb6bd3465bd`)
-//   .then(response => response.json())
-//   .then(responseJson => displayResultsIex(responseJson));
-
-//   fetch(`https://cloud.iexapis.com/v1/stock/sndl/batch?` + 
-//   `types=quote,news,chart&range=1m&last=15&token=pk_c34e191e78b54138b8559eb6bd3465bd`)
-//   .then(response => response.json())
-//   .then(responseJson => 
-  
-//     displayResultsIex(responseJson));
-// }
-
-
-const displayResultsAlpha = (responseJson) => {
-  console.log(responseJson);
-  $('.display-results').removeClass('hidden');
-  //grabbing data from promise
-  let stockSymbol = responseJson["Meta Data"]["2. Symbol"];
-  let mostRecentResult = Object.values(responseJson["Time Series (15min)"])[Object.values(responseJson).length];
-  console.log(stockSymbol, mostRecentResult);
-  let price = mostRecentResult["4. close"];
-  //DOM manipulation
-    $('.display-results').append(
-      `<div>${stockSymbol}:${price}</div`
-    )
+const fetchIex = (individualStockName) => {
+   return fetch(`https://cloud.iexapis.com/v1/stock/${individualStockName}/batch?` + 
+  `types=quote,news,chart&range=1m&last=15&token=pk_c34e191e78b54138b8559eb6bd3465bd`)
+  .then(response => response.json())
 }
 
-// const displayResultsIex = (responseJson) => {
+// const displayResultsAlpha = (responseJson) => {
 //   console.log(responseJson);
-//     $('#results-list').removeClass('hidden');
-//     $('#results-list').append(
-//       `<li><h3>${responseJson.quote.companyName}`
+//   $('.display-results').removeClass('hidden');
+//   //grabbing data from promise
+//   let stockSymbol = responseJson["Meta Data"]["2. Symbol"];
+//   let mostRecentResult = Object.values(responseJson["Time Series (15min)"])[Object.values(responseJson).length];
+//   console.log(stockSymbol, mostRecentResult);
+//   let price = mostRecentResult["4. close"];
+//   //DOM manipulation
+//     $('.display-results').append(
+//       `<div>${stockSymbol}:${price}</div`
 //     )
 // }
 
-const watchStockTickerButton = () => {
-  //setInterval...AJAX request
+const displayResultsIex = (responseJson) => {
+  console.log(responseJson);
+  $('.display-results').removeClass('hidden');
+  //grabbing data from promise
+  let stockSymbol = responseJson.quote.symbol;
+  // console.log(responseJson.quote.symbol);
+  let companyName = responseJson.quote.companyName;
+  let closingPrice = responseJson.quote.close;
+  let dailyPlusOrMinus = responseJson.quote.change;
+  //DOM manipulation
+    $('.display-results').append(
+      `<div class="iexResults">Stock Symbol: ${stockSymbol}<br>Company Name: ${companyName}<br>Closing Price: $${closingPrice}<br>+/-: ${dailyPlusOrMinus}</div`
+    )
+}
+
+const beginStockTickerInterval = () => {
+  window.setInterval(()=> fetchStockTicker().then(displayStockTickerResults), 5000);
+}
+
+const displayStockTickerResults = () => {
+  
 }
 
 const watchSearchingForIndividualStocks = () => {
   $('.submit-form').on('submit', (e) => {
+    console.log('Submit working');
     e.preventDefault();
-    let stockTickerSymbol = $('#company').val();
-    //calling fetchAlpha passing value to turn into responseJson and display in DOM
-    fetchAlpha(stockTickerSymbol).then(responseJson => displayResultsAlpha(responseJson));
+    let individualStockName = $('#company').val();
+    //calling fetch passing value to turn into responseJson and display in DOM
+    fetchIex(individualStockName).then(responseJson => displayResultsIex(responseJson));
     // fetchIex(result);
   })
 }
@@ -93,7 +91,7 @@ const manageAccountSettings = () => {
 $(function() {
   console.log('App loaded! Waiting for submit!');
   watchSearchingForIndividualStocks();
-  // watchStockTickerButton();
+  beginStockTickerInterval();
   // manageAccountSettings();
 });
 
