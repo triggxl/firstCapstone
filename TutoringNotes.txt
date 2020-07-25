@@ -1,7 +1,13 @@
 Tutoring:
 
-7/22
+7/23
 
+•Capstone is running fetch twice 
+•How to target and style template literal string in JS
+•only use bracket notation if key is more than one word,
+•otherwise create seperate local variable for each key accessed from API
+
+7/22
 •start using DevTools, create temp variables to build requests for data 
 
 Resources:
