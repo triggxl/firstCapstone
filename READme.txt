@@ -19,11 +19,27 @@ make an AJAX request to retrieve market data using setInterval(function, milisec
 I'm wanting to display the responseJson in the console 
 to reference key value pairs I can use to display in the DOM
 
+Other features to add:
 Encrypting text:
 https://css-tricks.com/snippets/css/password-input-bullet-alternatives/
 
+$('#input-tags3').selectize({
+  plugins: ['remove_button']['restore_on_backspace'],
+  delimiter: ',',
+  persist: false,
+  create: function(input) {
+      return {
+          value: input,
+          text: input
+      }
+  }
+});
+https://selectize.github.io/selectize.js/
+
 -----------------------------------------------------------------------------------------
 User Flows: (Simple and Complex)
+
+1. Event listener/Interval triggers 2. AJAX 3.DOM manipulation ("fetch data and then do DOM manipulation")
 
 https://signalvnoise.com/posts/1926-a-shorthand-for-designing-ui-flows
 Allow the developer to make decisions and changes at a low fidelity before you invest a lot of time in design

@@ -55,6 +55,11 @@ a {
   justify-content: center;
 }
 
+.display-results {
+  text-align: center;
+  padding-top: 1.3em;
+}
+
 label {
   display: block;
   text-align: center;
@@ -63,4 +68,11 @@ label {
 .log-in-form {
   text-align: center;
   /* border: 3px solid #333; */
+}
+
+@media (max-width: 980px) {
+  
+}
+@media (min-width: 550px) {
+
 }
