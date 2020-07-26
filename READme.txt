@@ -1,4 +1,4 @@
-App to display multiple stocks in real time, login to access favorited stocks
+App to display multiple stocks in real time, login to access favorited stocks; user able to search by individual stock
 -----------------------------------------------------------------------------------------
 To-Do's:
 
