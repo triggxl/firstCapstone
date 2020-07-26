@@ -1,5 +1,18 @@
-App to display multiple stocks in real time, login to access favorited stocks; user able to search by individual stock
+Application Summary:
+
+This app displays multiple stocks in real time, allowing the user to search by individual stock also; login to access favorited stocks (backend, future project)
+
+Live App Link:
+https://triggxl.github.io/firstCapstone/
+
+Technologies Used:
+HTML, CSS, JavaScript, jQuery
 -----------------------------------------------------------------------------------------
+
+
+
+
+
 To-Do's:
 
 1. Display real time stock tickers (setInterval)
