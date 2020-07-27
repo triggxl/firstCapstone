@@ -1,4 +1,4 @@
-Application Summary:
+Summary:
 
 This app displays multiple stocks in real time, allowing the user to search by individual stock also; login to access favorited stocks (backend, future project)
 
@@ -9,28 +9,25 @@ Technologies Used:
 HTML, CSS, JavaScript, jQuery
 -----------------------------------------------------------------------------------------
 
-
-
-
-
 To-Do's:
+
+1. center news story results
+2. make link blue and active
+3. only want to display 4 relevant news articles
 
 1. Display real time stock tickers (setInterval)
 2. alert message upon log in ('user logged in!');
 3. use DOM manipulation to display search results from 'Search the Market' on page
 4. display latest/most relevant news stories in 'News Stories' section on load
-
+5. Update remote URL
+6. Utilize Promise.all()
 promise.all()
 fetch data for:
-stock tickers
 search the market
 news stories
 
 make an AJAX request to retrieve market data using setInterval(function, miliseconds) from required API
 .then use DOM manipulation to change stock ticker on page
-
-I'm wanting to display the responseJson in the console 
-to reference key value pairs I can use to display in the DOM
 
 Other features to add:
 Encrypting text:
@@ -70,7 +67,6 @@ Users will be able to visit links to pertinent news sites ex: Market Watch, Mote
 Users will be able to visit a tab related to budget advise
 Users will be able to visit a tab related to personal finance options ex: credit card recommendations
   ex: link to Credit Karma
-
 
 -----------------------------------------------------------------------------------------
 Backend:

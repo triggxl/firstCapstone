@@ -36,6 +36,22 @@ h3 {
   text-align: center;
 }
 
+/* HTML */
+.display-news-stories h2 {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* JS */
+.newsArticleResults{
+  width: 100%;
+  height: auto;
+}
+
+.newsArticleImageContainer, .newsArticleImage {
+  width: 100%;
+}
+
 a {
   text-align: center;
 }
