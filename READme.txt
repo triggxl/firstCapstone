@@ -11,6 +11,14 @@ HTML, CSS, JavaScript, jQuery
 
 To-Do's:
 
+Stock Symbol
+Company name
+iexRealtimePrice
+Change
+Opening
+Closing
+
+
 1. center news story results
 2. make link blue and active
 3. only want to display 4 relevant news articles
@@ -79,3 +87,46 @@ As an administrator	I want to be able to view performance logs + real time data 
 As an administrator	I want to view user activity --> analytics to improve UX design
 As an administrator	I want to be able to unlock a user's account
 -----------------------------------------------------------------------------------------
+Notes:
+
+Flow of logic:
+event handler/setInterval
+fetch
+DOM manipulation
+
+.map .forEach etc are referred to as methods for DOM manipulation
+
+
+is there a tool that can do what I need, find that tool, use it
+DOM manipulation, fetches, iteration techniques
+array iteration methods
+filter, reduce, forEach, find
+objects and arrays
+[{a:1},{a:2}].map(x=>x.a)
+
+-----------------------------------------------------------------------------------------
+Other code/functionaltiy for later use:
+
+const handleAllFetchCallsAndPromises = () => {
+  const fetchStockTickerDataPromise = fetchStockTicker()
+  const allFetches = Promise.all([fetchStockTickerDataPromise, promise2]);
+  allFetches.then((result1, result2));
+}
+
+const fetchStockTicker = () => {
+  return fetch(``)
+  .then(response => responseJson);
+}
+const beginStockTickerInterval = () => {
+  window.setInterval(()=> fetchStockTicker().then(displayStockTickerResults), 5000);
+}
+
+const displayStockTickerResults = () => {
+  console.log(displayStockTickerResults);
+}
+
+const updateStockTicker = (responseJson) => {
+  console.log(responseJson);
+}
+
+

@@ -10,13 +10,17 @@ const displayResultsIex = (responseJson) => {
   $('.display-results').removeClass('hidden').empty();
   let stockSymbol = responseJson.quote.symbol;
   let companyName = responseJson.quote.companyName;
-  let openingPrice = responseJson.quote.open;
-  let closingPrice = responseJson.quote.close;
+  let realTimePrice = responseJson.quote.iexRealtimePrice;
+  // let openingPrice = responseJson.quote.open;
+  let closingPrice = responseJson.quote.iexClose;
   let dailyPlusOrMinus = responseJson.quote.change;
+  let week52High = responseJson.quote.week52High;
+  let week52Low = responseJson.quote.week52Low;
+  let ytdChange = responseJson.quote.ytdChange;
     $('.display-results').append(
       `<div class="iexResults">Stock Symbol: ${stockSymbol}<br>Company Name: 
-      ${companyName}<br>Opening Price: $${openingPrice}<br>
-      Closing Price: $${closingPrice}<br>(+/-): ${dailyPlusOrMinus}</div`
+      ${companyName}<br><hr>Real Time Price: ${realTimePrice}<br>
+      Closing Price: $${closingPrice}<br>(+/-): ${dailyPlusOrMinus}<br><hr>52 Week High: ${week52High}<br>52 Week Low: ${week52Low}<br>YTD Change: ${ytdChange}</div`
     )
     $('.display-news-stories').empty();
     for(i = 0; i < responseJson.news.length && i < 8; i++) {
@@ -45,22 +49,10 @@ const watchSearchingForIndividualStocks = () => {
 $(function() {
   console.log('App loaded! Waiting for submit!');
   watchSearchingForIndividualStocks();
-  beginStockTickerInterval();
 });
 
-const handleAllFetchCallsAndPromises = () => {
-  const fetchStockTickerDataPromise = fetchStockTicker()
-  const allFetches = Promise.all([fetchStockTickerDataPromise, promise2]);
-  allFetches.then((result1, result2));
-}
 
-const fetchStockTicker = () => {
-  return fetch(``)
-  .then(response => responseJson);
-}
-const beginStockTickerInterval = () => {
-  window.setInterval(()=> fetchStockTicker().then(displayStockTickerResults), 5000);
-}
+
 
 /* 
 event handler/setInterval
@@ -68,14 +60,6 @@ fetch
 DOM manipulation
 //methods for DOM manipulation
 */
-
-const displayStockTickerResults = () => {
-  console.log(displayStockTickerResults);
-}
-
-const updateStockTicker = (responseJson) => {
-  console.log(responseJson);
-}
 
 //is there a tool that can do what I need, find that tool, use it
 //DOM manipulation, fetches, iteration techniques
