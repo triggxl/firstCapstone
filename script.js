@@ -18,6 +18,7 @@ const displayResultsIex = (responseJson) => {
       ${companyName}<br>Opening Price: $${openingPrice}<br>
       Closing Price: $${closingPrice}<br>(+/-): ${dailyPlusOrMinus}</div`
     )
+    $('.display-news-stories').empty();
     for(i = 0; i < responseJson.news.length && i < 8; i++) {
       $('.display-news-stories').append(buildNewsStory(responseJson.news[i]));
     }     
@@ -26,22 +27,9 @@ const displayResultsIex = (responseJson) => {
 
 const buildNewsStory = (newsArticle) => {
   return `<div class="newsArticleResults"><h2>${newsArticle.headline}</h2> <div>${newsArticle.summary}</div>
-  <p class="newsArticleImageContainer"><img class="newsArticleImage"src="${newsArticle.image}"></p><a href="${newsArticle.url}">${newsArticle.url}:</a></div>
+  <p class="newsArticleImageContainer"></p><a href="${newsArticle.url}"><img class="newsArticleImage"src="${newsArticle.image}">${newsArticle.url}:</a></div>
   `
 }
-
-//want to map through and display 4 revlant news stories to stock inquiry
-
-
-
-//is there a tool that can do what I need, find that tool, use it
-//DOM manipulation, fetches, iteration techniques
-//array iteration methods
-//filter, reduce, forEach, find
-//objects and arrays
-//[{a:1},{a:2}].map(x=>x.a)
-
-
 
 const watchSearchingForIndividualStocks = () => {
   $('.submit-form').on('submit', (e) => {
@@ -54,25 +42,11 @@ const watchSearchingForIndividualStocks = () => {
   })
 }
 
-
-
-
 $(function() {
   console.log('App loaded! Waiting for submit!');
   watchSearchingForIndividualStocks();
   beginStockTickerInterval();
 });
-
-
-/**************Other Features Below this Line are in Progress***************/
-
-const fetchStockTicker = () => {
-  // let stockTickerPromise = fetch(`url`);
-  // let parseDataPromise = stockTickerPromise.then(response => response.json())
-  // return parseDataPromise;
-  return new Promise(function(){});
-}
-
 
 const handleAllFetchCallsAndPromises = () => {
   const fetchStockTickerDataPromise = fetchStockTicker()
@@ -80,32 +54,37 @@ const handleAllFetchCallsAndPromises = () => {
   allFetches.then((result1, result2));
 }
 
+const fetchStockTicker = () => {
+  return fetch(``)
+  .then(response => responseJson);
+}
 const beginStockTickerInterval = () => {
   window.setInterval(()=> fetchStockTicker().then(displayStockTickerResults), 5000);
 }
 
-const displayStockTickerResults = () => {
-  
-}
+/* 
+event handler/setInterval
+fetch
+DOM manipulation
+//methods for DOM manipulation
+*/
 
-const displayNewsStories = () => {
-  $('.display-marketWatch-stories').window(onload());
-  $('.display-yahooFinance-stories')
-  $('.display-WSJ-stories')
-  $('.display-forbesMoney-stories')
-  $('.display-investopedia-stories')
-  $('.display-bloombergMarkets-stories')
+const displayStockTickerResults = () => {
+  console.log(displayStockTickerResults);
 }
 
 const updateStockTicker = (responseJson) => {
   console.log(responseJson);
 }
 
-const manageAccountSettings = () => {
-  $('.login-account').on('click', () => {
-    alert('User logged in!');
-  })
-}
+//is there a tool that can do what I need, find that tool, use it
+//DOM manipulation, fetches, iteration techniques
+//array iteration methods
+//filter, reduce, forEach, find
+//objects and arrays
+//[{a:1},{a:2}].map(x=>x.a)
+
+
 
 
 
