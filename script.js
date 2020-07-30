@@ -1,6 +1,6 @@
 const fetchIex = (individualStockName) => {
    return fetch(`https://cloud.iexapis.com/v1/stock/${individualStockName}/batch?` + 
-  `types=quote,news,chart&range=1m&last=15&token=pk_c34e191e78b54138b8559eb6bd3465bd`)
+  `types=quote,news,chart&range=1m&last=15&token=pk_1702acf0d62c47559fb43d153de2c635`)
   .then(response => response.json())
 }
  
@@ -26,7 +26,6 @@ const displayResultsIex = (responseJson) => {
     for(i = 0; i < responseJson.news.length && i < 8; i++) {
       $('.display-news-stories').append(buildNewsStory(responseJson.news[i]));
     }     
-    console.log(responseJson.news);
 }
 
 const buildNewsStory = (newsArticle) => {
