@@ -38,7 +38,7 @@ h3 {
   grid-gap: 20px;
   padding-top: 1.2em;
   list-style: none;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   text-align: center;
   max-width: 35em;
   max-height: 100em;
