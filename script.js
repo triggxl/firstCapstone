@@ -18,7 +18,7 @@ const displayResultsIex = (responseJson) => {
     $('.display-results').append(
       `<div class="iexResults">Stock Symbol: ${stockSymbol}<br>Company Name: 
       ${companyName}<br><hr>Real Time Price: ${realTimePrice}<br>
-      Closing Price: $${closingPrice}<br>(+/-): ${dailyPlusOrMinus}<br><hr>52 Week High: ${week52High}<br>52 Week Low: ${week52Low}<br>YTD Change: ${ytdChange}</div`
+      Closing Price: $${closingPrice}<br>Daily(+/-): ${dailyPlusOrMinus}<br><hr>52 Week High: ${week52High}<br>52 Week Low: ${week52Low}<br>YTD Change: ${ytdChange}</div`
     )
     $('.display-news-stories').empty();
     for(i = 0; i < responseJson.news.length && i < 8; i++) {
