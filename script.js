@@ -2,16 +2,20 @@ const fetchIex = (individualStockName) => {
    return fetch(`https://cloud.iexapis.com/v1/stock/${individualStockName}/batch?` + 
   `types=quote,news,chart&range=1m&last=15&token=pk_1702acf0d62c47559fb43d153de2c635`)
   .then(response => response.json())
+  .catch(err => {
+    if(!individualStockName) {
+      "Please enter a Stock Ticker Symbol";
+    }
+  })
 }
  
 //Grab data from promise + DOM manipulation
 const displayResultsIex = (responseJson) => {
-  console.log(responseJson);
   $('.display-results').removeClass('hidden').empty();
   let stockSymbol = responseJson.quote.symbol;
   let companyName = responseJson.quote.companyName;
   let latestPrice = responseJson.quote.latestPrice;
-  let previousDayClosingPrice = responseJson.quote.iexClose;
+  let previousDayClosingPrice = responseJson.quote.previousClose;
   let dailyPlusOrMinus = responseJson.quote.change;
   let week52High = responseJson.quote.week52High;
   let week52Low = responseJson.quote.week52Low;
