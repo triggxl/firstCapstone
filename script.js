@@ -13,7 +13,7 @@ const displayResultsIex = (responseJson) => {
   $('.display-results').removeClass('hidden').empty();
   if(responseJson === undefined) {
   $('.display-results').html('Please enter a symbol ex: AMZN');
-  }else {
+  } else {
   let stockSymbol = responseJson.quote.symbol;
   let companyName = responseJson.quote.companyName;
   let latestPrice = responseJson.quote.latestPrice;
@@ -28,7 +28,7 @@ const displayResultsIex = (responseJson) => {
       Closing Price (Previous Day): $${previousDayClosingPrice}<br>Daily(+/-): $${dailyPlusOrMinus}<br><hr>52 Week High: $${week52High}<br>52 Week Low: $${week52Low}<br>YTD Change: ${ytdChange}%</div`
     )
     $('.display-news-stories').empty();
-    for(i = 0; i < responseJson.news.length && i < 1; i++) {
+    for(i = 0; i < responseJson.news.length && i < 4; i++) {
       $('.display-news-stories').append(buildNewsStory(responseJson.news[i]));
     }     
   }
