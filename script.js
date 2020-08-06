@@ -28,15 +28,15 @@ const displayResultsIex = (responseJson) => {
       Closing Price (Previous Day): $${previousDayClosingPrice}<br>Daily(+/-): $${dailyPlusOrMinus}<br><hr>52 Week High: $${week52High}<br>52 Week Low: $${week52Low}<br>YTD Change: ${ytdChange}%</div`
     )
     $('.display-news-stories').empty();
-    for(i = 0; i < responseJson.news.length && i < 4; i++) {
+    for(i = 0; i < responseJson.news.length && i < 1; i++) {
       $('.display-news-stories').append(buildNewsStory(responseJson.news[i]));
     }     
   }
 }
 
 const buildNewsStory = (newsArticle) => {
-  return `<div class="newsArticleResults"><h2>${newsArticle.headline}</h2> <div>${newsArticle.summary}</div>
-  <p class="newsArticleImageContainer"></p><a href="${newsArticle.url}"><img class="newsArticleImage" alt="This is a news story result based on the Stock symbol the user searched for"src="${newsArticle.image}">${newsArticle.url}:</a></div>
+  return `<div  class="newsArticleResults"><h2>${newsArticle.headline}</h2> <div>${newsArticle.summary}</div>
+  <p class="newsArticleImageContainer"></p><a href="${newsArticle.url}" target="_blank"><img class="newsArticleImage" alt="This is a news story result based on the Stock symbol the user searched for"src="${newsArticle.image}">${newsArticle.url}:</a></div>
   `
 }
 
